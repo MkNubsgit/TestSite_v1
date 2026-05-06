@@ -117,12 +117,34 @@
     <hr />
 
     <p class="stats">
-      Visitors: <span class="counter">00000001</span>
+      Visitors: <span class="counter" id="hit-counter">--------</span>
     </p>
 
     <footer>
       Best viewed in Netscape Navigator 4.0 at 800&times;600
     </footer>
   </div>
+  <script>
+    (function () {
+      var el = document.getElementById('hit-counter');
+      if (!el) return;
+      var endpoints = [
+        'https://abacus.jasoncameron.dev/hit/mishaevans-com/visits',
+        'https://api.counterapi.dev/v1/mishaevans-com/visits/up'
+      ];
+      function pad(n) { return String(n).padStart(8, '0'); }
+      function tryNext(i) {
+        if (i >= endpoints.length) { el.textContent = '00000000'; return; }
+        fetch(endpoints[i], { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+          .then(function (d) {
+            var n = d.value || d.count || (d.data && d.data.up_count) || 0;
+            el.textContent = pad(n);
+          })
+          .catch(function () { tryNext(i + 1); });
+      }
+      tryNext(0);
+    })();
+  </script>
 </body>
 </html>
