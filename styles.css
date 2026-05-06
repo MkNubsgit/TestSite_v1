@@ -137,23 +137,6 @@ article ul {
 }
 article ul li { margin-bottom: 2px; }
 
-ul.inline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  font-size: 0.95rem;
-}
-
-.page-footer {
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-  font-size: 0.95rem;
-}
-
 .theme-toggle {
   position: fixed;
   top: 16px;
@@ -177,8 +160,7 @@ ul.inline {
 @media print {
   .theme-toggle { display: none; }
   main { padding: 0; max-width: none; }
-  section, .page-footer { border-color: #ccc; }
+  section { border-color: #ccc; }
   .copy { text-decoration: none; }
-  .page-footer { display: none; }
   a { color: #000; }
 }
