@@ -3,172 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Misha Evans</title>
-  <meta name="description" content="Misha Evans — personal site, resume, and links." />
-  <meta name="author" content="Misha Evans" />
-  <link rel="canonical" href="https://mishaevans.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Misha Evans" />
-  <meta property="og:description" content="Personal site, resume, and links." />
-  <meta property="og:url" content="https://mishaevans.com/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Misha Evans" />
-  <meta name="twitter:description" content="Personal site, resume, and links." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Under Construction</title>
+  <meta name="description" content="This site is under construction." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚧</text></svg>" />
+  <style>
+    :root {
+      --bg: #0e0f13;
+      --fg: #e6e7ea;
+      --muted: #9aa0a6;
+      --accent: #7c5cff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      line-height: 1.5;
+      overflow: hidden;
+    }
+    .glow {
+      position: fixed; inset: -20%;
+      background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      to { transform: translate(40px, -20px) scale(1.05); }
+    }
+    main { position: relative; max-width: 480px; }
+    .badge {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid color-mix(in srgb, var(--muted) 30%, transparent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(120deg, var(--fg), var(--accent) 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p { color: var(--muted); margin: 0; }
+    .dots::after {
+      display: inline-block;
+      content: "";
+      animation: dots 1.4s steps(4, end) infinite;
+    }
+    @keyframes dots {
+      0%   { content: ""; }
+      25%  { content: "."; }
+      50%  { content: ".."; }
+      75%  { content: "..."; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a class="brand" href="#top">ME<span class="dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="theme-toggle" aria-label="Toggle theme">&#9788;</button>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-text">
-        <p class="eyebrow">Hi, I'm</p>
-        <h1>Misha Evans</h1>
-        <p class="tagline">Builder, learner, and the person behind <code>@mknubs</code>.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn ghost" href="resume.pdf" download>Download resume</a>
-        </div>
-        <ul class="socials" aria-label="Social links">
-          <li><a href="https://github.com/mknubs" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/mknubs" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://x.com/mknubs" target="_blank" rel="noopener">X / Twitter</a></li>
-          <li><a href="https://instagram.com/mknubs" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://youtube.com/@mknubs" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://twitch.tv/mknubs" target="_blank" rel="noopener">Twitch</a></li>
-          <li><a href="mailto:hello@mishaevans.com">Email</a></li>
-        </ul>
-      </div>
-      <div class="hero-card" aria-hidden="true">
-        <div class="card-glow"></div>
-        <div class="card-inner">
-          <span class="mono">~ $ whoami</span>
-          <span class="mono accent">misha</span>
-          <span class="mono">~ $ cat about.txt</span>
-          <span class="mono">building things on the internet.</span>
-          <span class="mono blink">_</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section container">
-      <h2>About</h2>
-      <p>
-        Hey — I'm Misha. This site is a small home for the things I make and the
-        places you can find me online. Replace this paragraph with a short bio:
-        what you do, what you're curious about, and what you're working on right now.
-      </p>
-      <ul class="chip-list" aria-label="Interests">
-        <li>Software</li>
-        <li>Design</li>
-        <li>Writing</li>
-        <li>Music</li>
-        <li>Photography</li>
-      </ul>
-    </section>
-
-    <section id="resume" class="section container">
-      <h2>Resume</h2>
-      <p class="muted">A quick snapshot — full PDF available <a href="resume.pdf" download>here</a>.</p>
-
-      <h3>Experience</h3>
-      <div class="timeline">
-        <article class="entry">
-          <header>
-            <h4>Role / Title</h4>
-            <span class="when">2024 — Present</span>
-          </header>
-          <p class="where">Company Name · City</p>
-          <ul>
-            <li>Shipped X that improved Y by Z%.</li>
-            <li>Led a small team building [thing].</li>
-            <li>Owned [area] from idea to production.</li>
-          </ul>
-        </article>
-        <article class="entry">
-          <header>
-            <h4>Previous Role</h4>
-            <span class="when">2021 — 2024</span>
-          </header>
-          <p class="where">Previous Company · City</p>
-          <ul>
-            <li>Built [project] used by [N] people.</li>
-            <li>Mentored junior contributors.</li>
-          </ul>
-        </article>
-      </div>
-
-      <h3>Education</h3>
-      <article class="entry">
-        <header>
-          <h4>University Name</h4>
-          <span class="when">20XX — 20XX</span>
-        </header>
-        <p class="where">Degree · Field of study</p>
-      </article>
-
-      <h3>Skills</h3>
-      <ul class="chip-list">
-        <li>JavaScript / TypeScript</li>
-        <li>Python</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>SQL</li>
-        <li>Git</li>
-        <li>Linux</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="section container">
-      <h2>Projects</h2>
-      <div class="grid">
-        <a class="proj" href="#" target="_blank" rel="noopener">
-          <h3>Project One</h3>
-          <p>Short description of what it is and what makes it interesting.</p>
-          <span class="tag">web</span>
-        </a>
-        <a class="proj" href="#" target="_blank" rel="noopener">
-          <h3>Project Two</h3>
-          <p>Short description. Add a live link or repo URL here.</p>
-          <span class="tag">tool</span>
-        </a>
-        <a class="proj" href="#" target="_blank" rel="noopener">
-          <h3>Project Three</h3>
-          <p>Short description. Swap these placeholders with your own work.</p>
-          <span class="tag">writing</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="contact" class="section container">
-      <h2>Contact</h2>
-      <p>
-        Best way to reach me is email:
-        <a href="mailto:hello@mishaevans.com">hello@mishaevans.com</a>.
-        I also reply on most of the platforms linked above.
-      </p>
-    </section>
+  <div class="glow" aria-hidden="true"></div>
+  <main>
+    <span class="badge">Coming soon</span>
+    <h1>Under construction</h1>
+    <p>Something new is being built<span class="dots"></span></p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Misha Evans</p>
-      <p class="muted">Built with plain HTML, CSS, and a sprinkle of JS.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
