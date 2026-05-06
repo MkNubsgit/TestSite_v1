@@ -8,78 +8,138 @@
   <meta name="robots" content="noindex" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚧</text></svg>" />
   <style>
-    :root {
-      --bg: #0e0f13;
-      --fg: #e6e7ea;
-      --muted: #9aa0a6;
-      --accent: #7c5cff;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; height: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0;
+      padding: 32px 16px;
+      background: #008080;
+      color: #000;
+      font-family: "Times New Roman", Times, serif;
       text-align: center;
-      padding: 24px;
-      line-height: 1.5;
+      min-height: 100vh;
+      box-sizing: border-box;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 2px, transparent 2px 8px);
+    }
+
+    .frame {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #c0c0c0;
+      border: 3px ridge #dfdfdf;
+      padding: 24px 20px;
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    .marquee {
       overflow: hidden;
+      white-space: nowrap;
+      background: #000;
+      color: #ffff00;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      padding: 6px 0;
+      border: 2px inset #808080;
+      margin-bottom: 20px;
     }
-    .glow {
-      position: fixed; inset: -20%;
-      background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
-      filter: blur(40px);
-      pointer-events: none;
-      animation: drift 12s ease-in-out infinite alternate;
-    }
-    @keyframes drift {
-      to { transform: translate(40px, -20px) scale(1.05); }
-    }
-    main { position: relative; max-width: 480px; }
-    .badge {
+    .marquee span {
       display: inline-block;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid color-mix(in srgb, var(--muted) 30%, transparent);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 24px;
+      padding-left: 100%;
+      animation: scroll 28s linear infinite;
     }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-100%); }
+    }
+
     h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin: 0 0 12px;
-      letter-spacing: -0.02em;
-      background: linear-gradient(120deg, var(--fg), var(--accent) 90%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-family: "Impact", "Arial Black", sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      color: #ff0000;
+      text-shadow: 2px 2px 0 #ffff00, 4px 4px 0 #000;
+      margin: 0 0 8px;
     }
-    p { color: var(--muted); margin: 0; }
-    .dots::after {
+
+    .blink {
+      animation: blink 2.4s steps(2, start) infinite;
+      color: #000080;
+      font-weight: bold;
+    }
+    @keyframes blink { to { visibility: hidden; } }
+
+    .sign {
       display: inline-block;
-      content: "";
-      animation: dots 1.4s steps(4, end) infinite;
+      margin: 18px 0;
+      padding: 14px 22px;
+      background: #ffd700;
+      color: #000;
+      font-family: "Arial Black", Arial, sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      border: 4px solid #000;
+      transform: rotate(-2deg);
+      animation: sway 6s ease-in-out infinite;
     }
-    @keyframes dots {
-      0%   { content: ""; }
-      25%  { content: "."; }
-      50%  { content: ".."; }
-      75%  { content: "..."; }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-2deg); }
+      50%      { transform: rotate(2deg); }
+    }
+    .sign::before, .sign::after { content: " ★ "; }
+
+    p { font-size: 1.05rem; margin: 10px 0; }
+
+    hr {
+      border: none;
+      height: 4px;
+      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+      margin: 20px 0;
+    }
+
+    .stats {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.85rem;
+      color: #000080;
+    }
+    .counter {
+      display: inline-block;
+      background: #000;
+      color: #00ff00;
+      font-family: "Courier New", Courier, monospace;
+      padding: 2px 8px;
+      letter-spacing: 0.15em;
+      border: 1px inset #808080;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #000080;
+      font-family: "Courier New", Courier, monospace;
     }
   </style>
 </head>
 <body>
-  <div class="glow" aria-hidden="true"></div>
-  <main>
-    <span class="badge">Coming soon</span>
-    <h1>Under construction</h1>
-    <p>Something new is being built<span class="dots"></span></p>
-  </main>
+  <div class="frame">
+    <div class="marquee" aria-hidden="true">
+      <span>~ ~ ~ welcome to the world wide web ~ ~ ~ this page is under construction ~ ~ ~ please check back soon ~ ~ ~</span>
+    </div>
+
+    <h1>UNDER CONSTRUCTION</h1>
+    <p class="blink">★ Coming Soon ★</p>
+
+    <div class="sign">WORK IN PROGRESS</div>
+
+    <p>Pardon our dust while we build something new.</p>
+
+    <hr />
+
+    <p class="stats">
+      Visitors: <span class="counter">00000001</span>
+    </p>
+
+    <footer>
+      Best viewed in Netscape Navigator 4.0 at 800&times;600
+    </footer>
+  </div>
 </body>
 </html>
