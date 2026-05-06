@@ -10,35 +10,25 @@
   <style>
     body {
       margin: 0;
-      padding: 64px 24px;
+      padding: 24px;
       background: #008080;
       color: #000;
       font-family: "Times New Roman", Times, serif;
-      text-align: center;
       min-height: 100vh;
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-image:
         repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 2px, transparent 2px 8px);
     }
 
     .frame {
-      max-width: 720px;
-      margin: 0 auto;
       background: #c0c0c0;
       border: 3px ridge #dfdfdf;
-      padding: 56px 48px;
+      padding: 56px 64px;
       box-shadow: 6px 6px 0 #000;
-    }
-
-    .banner {
-      background: #000;
-      color: #ffff00;
-      font-family: "Courier New", Courier, monospace;
-      font-weight: bold;
-      padding: 10px 16px;
-      border: 2px inset #808080;
-      margin-bottom: 40px;
-      letter-spacing: 0.04em;
+      text-align: center;
     }
 
     h1 {
@@ -47,82 +37,32 @@
       letter-spacing: 0.04em;
       color: #ff0000;
       text-shadow: 2px 2px 0 #ffff00, 4px 4px 0 #000;
-      margin: 0 0 16px;
-    }
-
-    .subtitle {
-      color: #000080;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin: 0 0 36px;
-    }
-
-    .sign {
-      display: inline-block;
-      margin: 12px 0 36px;
-      padding: 16px 28px;
-      background: #ffd700;
-      color: #000;
-      font-family: "Arial Black", Arial, sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.06em;
-      border: 4px solid #000;
-    }
-    .sign::before, .sign::after { content: " ★ "; }
-
-    p { font-size: 1.05rem; margin: 16px 0; line-height: 1.6; }
-
-    hr {
-      border: none;
-      height: 4px;
-      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-      margin: 36px 0;
+      margin: 0 0 40px;
     }
 
     .stats {
       font-family: "Courier New", Courier, monospace;
       font-size: 0.9rem;
       color: #000080;
-      margin: 0 0 28px;
+      margin: 0;
     }
     .counter {
       display: inline-block;
       background: #000;
       color: #00ff00;
-      font-family: "Courier New", Courier, monospace;
       padding: 4px 10px;
       letter-spacing: 0.18em;
       border: 1px inset #808080;
       margin-left: 6px;
     }
-
-    footer {
-      font-size: 0.85rem;
-      color: #000080;
-      font-family: "Courier New", Courier, monospace;
-    }
   </style>
 </head>
 <body>
   <div class="frame">
-    <div class="banner">~ ~ ~ THIS PAGE IS UNDER CONSTRUCTION ~ ~ ~</div>
-
     <h1>UNDER CONSTRUCTION</h1>
-    <p class="subtitle">★ Coming Soon ★</p>
-
-    <div class="sign">WORK IN PROGRESS</div>
-
-    <p>Pardon our dust while we build something new.</p>
-
-    <hr />
-
     <p class="stats">
       Visitors: <span class="counter" id="hit-counter">--------</span>
     </p>
-
-    <footer>
-      Best viewed in Netscape Navigator 4.0 at 800&times;600
-    </footer>
   </div>
   <script>
     (function () {
