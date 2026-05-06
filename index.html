@@ -3,88 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
-  <meta name="description" content="This site is under construction." />
-  <meta name="robots" content="noindex" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚧</text></svg>" />
-  <style>
-    body {
-      margin: 0;
-      padding: 24px;
-      background: #008080;
-      color: #000;
-      font-family: "Times New Roman", Times, serif;
-      min-height: 100vh;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 2px, transparent 2px 8px);
-    }
-
-    .frame {
-      background: #c0c0c0;
-      border: 3px ridge #dfdfdf;
-      padding: 56px 64px;
-      box-shadow: 6px 6px 0 #000;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 0.02em;
-      color: #000;
-      margin: 0 0 40px;
-    }
-
-    .stats {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 0.9rem;
-      color: #000080;
-      margin: 0;
-    }
-    .counter {
-      display: inline-block;
-      background: #000;
-      color: #00ff00;
-      padding: 4px 10px;
-      letter-spacing: 0.18em;
-      border: 1px inset #808080;
-      margin-left: 6px;
-    }
-  </style>
+  <title>Misha Evans</title>
+  <meta name="description" content="Misha Evans — resume and links." />
+  <meta name="author" content="Misha Evans" />
+  <link rel="canonical" href="https://mishaevans.com/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="frame">
-    <h1>UNDER CONSTRUCTION</h1>
-    <p class="stats">
-      Visitors: <span class="counter" id="hit-counter">--------</span>
-    </p>
-  </div>
-  <script>
-    (function () {
-      var el = document.getElementById('hit-counter');
-      if (!el) return;
-      var endpoints = [
-        'https://abacus.jasoncameron.dev/hit/mishaevans-com/visits',
-        'https://api.counterapi.dev/v1/mishaevans-com/visits/up'
-      ];
-      function pad(n) { return String(n).padStart(8, '0'); }
-      function tryNext(i) {
-        if (i >= endpoints.length) { el.textContent = '00000000'; return; }
-        fetch(endpoints[i], { cache: 'no-store' })
-          .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-          .then(function (d) {
-            var n = d.value || d.count || (d.data && d.data.up_count) || 0;
-            el.textContent = pad(n);
-          })
-          .catch(function () { tryNext(i + 1); });
-      }
-      tryNext(0);
-    })();
-  </script>
+  <main>
+    <header>
+      <h1>Misha Evans</h1>
+      <p class="role">Role / title goes here</p>
+      <ul class="socials">
+        <li><a href="https://instagram.com/mknubs" target="_blank" rel="noopener me">Instagram</a></li>
+        <li><a href="https://x.com/mknubs" target="_blank" rel="noopener me">Twitter</a></li>
+        <li>
+          <button type="button" class="copy" data-copy="mknubs" aria-label="Copy Discord username">
+            Discord: <span>mknubs</span>
+          </button>
+        </li>
+        <li><a href="mailto:hello@mishaevans.com">Email</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>Short bio — one or two sentences about who you are and what you do.</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <article>
+        <header class="entry-head">
+          <h3>Role / Title</h3>
+          <span class="when">2024 — Present</span>
+        </header>
+        <p class="where">Company Name · City</p>
+        <ul>
+          <li>What you did and the impact.</li>
+          <li>Another bullet — keep these tight.</li>
+        </ul>
+      </article>
+
+      <article>
+        <header class="entry-head">
+          <h3>Previous Role</h3>
+          <span class="when">2021 — 2024</span>
+        </header>
+        <p class="where">Previous Company · City</p>
+        <ul>
+          <li>What you did and the impact.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <article>
+        <header class="entry-head">
+          <h3>University Name</h3>
+          <span class="when">20XX — 20XX</span>
+        </header>
+        <p class="where">Degree · Field of study</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="inline">
+        <li>Skill A</li>
+        <li>Skill B</li>
+        <li>Skill C</li>
+        <li>Skill D</li>
+      </ul>
+    </section>
+
+    <footer class="page-footer">
+      <a href="resume.pdf" download>Download resume (PDF)</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
