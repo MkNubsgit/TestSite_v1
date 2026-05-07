@@ -1,11 +1,18 @@
 :root {
-  --bg: #fff;
+  --bg: #dfe3ea;
   --fg: #1a1a1a;
   --muted: #666;
-  --rule: #e5e5e5;
+  --rule: #c6ccd6;
   --link: #1a1a1a;
   --link-hover: #000;
   --max: 680px;
+
+  --rainbow-1: #d96088;        --rainbow-1-hover: #c14770;
+  --rainbow-2: #e07a3a;        --rainbow-2-hover: #c8611f;
+  --rainbow-3: #c89820;        --rainbow-3-hover: #a87f10;
+  --rainbow-4: #4ba668;        --rainbow-4-hover: #2e8a4c;
+  --rainbow-5: #3f7fc8;        --rainbow-5-hover: #2864ad;
+  --rainbow-6: #7e5ec9;        --rainbow-6-hover: #6443ae;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +23,13 @@
     --rule: #2a2a2a;
     --link: #e8e8e8;
     --link-hover: #fff;
+
+    --rainbow-1: #ef9bbf;      --rainbow-1-hover: #e57aa8;
+    --rainbow-2: #f1b58a;      --rainbow-2-hover: #ec9866;
+    --rainbow-3: #e8c97a;      --rainbow-3-hover: #d6b14a;
+    --rainbow-4: #8fcf9f;      --rainbow-4-hover: #6cbe82;
+    --rainbow-5: #8ab8e6;      --rainbow-5-hover: #6498d4;
+    --rainbow-6: #b8a3e8;      --rainbow-6-hover: #9b80de;
   }
 }
 
@@ -26,6 +40,13 @@
   --rule: #2a2a2a;
   --link: #e8e8e8;
   --link-hover: #fff;
+
+  --rainbow-1: #ef9bbf;        --rainbow-1-hover: #e57aa8;
+  --rainbow-2: #f1b58a;        --rainbow-2-hover: #ec9866;
+  --rainbow-3: #e8c97a;        --rainbow-3-hover: #d6b14a;
+  --rainbow-4: #8fcf9f;        --rainbow-4-hover: #6cbe82;
+  --rainbow-5: #8ab8e6;        --rainbow-5-hover: #6498d4;
+  --rainbow-6: #b8a3e8;        --rainbow-6-hover: #9b80de;
 }
 
 * { box-sizing: border-box; }
@@ -52,6 +73,36 @@ a {
   text-underline-offset: 2px;
 }
 a:hover { color: var(--link-hover); }
+
+.socials li:nth-child(1) a,
+.socials li:nth-child(1) .copy { color: var(--rainbow-1); }
+.socials li:nth-child(1) a:hover,
+.socials li:nth-child(1) .copy:hover { color: var(--rainbow-1-hover); }
+
+.socials li:nth-child(2) a,
+.socials li:nth-child(2) .copy { color: var(--rainbow-2); }
+.socials li:nth-child(2) a:hover,
+.socials li:nth-child(2) .copy:hover { color: var(--rainbow-2-hover); }
+
+.socials li:nth-child(3) a,
+.socials li:nth-child(3) .copy { color: var(--rainbow-3); }
+.socials li:nth-child(3) a:hover,
+.socials li:nth-child(3) .copy:hover { color: var(--rainbow-3-hover); }
+
+.socials li:nth-child(4) a,
+.socials li:nth-child(4) .copy { color: var(--rainbow-4); }
+.socials li:nth-child(4) a:hover,
+.socials li:nth-child(4) .copy:hover { color: var(--rainbow-4-hover); }
+
+.socials li:nth-child(5) a,
+.socials li:nth-child(5) .copy { color: var(--rainbow-5); }
+.socials li:nth-child(5) a:hover,
+.socials li:nth-child(5) .copy:hover { color: var(--rainbow-5-hover); }
+
+.socials li:nth-child(6) a,
+.socials li:nth-child(6) .copy { color: var(--rainbow-6); }
+.socials li:nth-child(6) a:hover,
+.socials li:nth-child(6) .copy:hover { color: var(--rainbow-6-hover); }
 
 h1 {
   font-size: 1.75rem;
