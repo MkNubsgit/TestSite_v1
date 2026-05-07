@@ -137,6 +137,18 @@ article ul {
 }
 article ul li { margin-bottom: 2px; }
 
+.undercut {
+  margin: 0 0 0 24px;
+  padding-left: 1.75em;
+  color: var(--muted);
+  font-size: 0.95rem;
+  list-style: lower-alpha;
+}
+.undercut li::marker {
+  content: counter(list-item, lower-alpha) ") ";
+}
+.undercut li { margin-bottom: 2px; }
+
 .theme-toggle {
   position: fixed;
   top: 16px;
