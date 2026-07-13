@@ -1,45 +1,11 @@
 :root {
-  --bg: #dfe3ea;
-  --fg: #1a1a1a;
-  --muted: #666;
-  --rule: #c6ccd6;
-  --link: #1a1a1a;
-  --link-hover: #000;
-  --max: 680px;
-
-  --rainbow-1: #d96088;        --rainbow-1-hover: #c14770;
-  --rainbow-2: #e07a3a;        --rainbow-2-hover: #c8611f;
-  --rainbow-3: #c89820;        --rainbow-3-hover: #a87f10;
-  --rainbow-4: #4ba668;        --rainbow-4-hover: #2e8a4c;
-  --rainbow-5: #3f7fc8;        --rainbow-5-hover: #2864ad;
-  --rainbow-6: #7e5ec9;        --rainbow-6-hover: #6443ae;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111;
-    --fg: #e8e8e8;
-    --muted: #9a9a9a;
-    --rule: #2a2a2a;
-    --link: #e8e8e8;
-    --link-hover: #fff;
-
-    --rainbow-1: #ef9bbf;      --rainbow-1-hover: #e57aa8;
-    --rainbow-2: #f1b58a;      --rainbow-2-hover: #ec9866;
-    --rainbow-3: #e8c97a;      --rainbow-3-hover: #d6b14a;
-    --rainbow-4: #8fcf9f;      --rainbow-4-hover: #6cbe82;
-    --rainbow-5: #8ab8e6;      --rainbow-5-hover: #6498d4;
-    --rainbow-6: #b8a3e8;      --rainbow-6-hover: #9b80de;
-  }
-}
-
-:root[data-theme="dark"] {
   --bg: #111;
   --fg: #e8e8e8;
   --muted: #9a9a9a;
   --rule: #2a2a2a;
   --link: #e8e8e8;
   --link-hover: #fff;
+  --max: 680px;
 
   --rainbow-1: #ef9bbf;        --rainbow-1-hover: #e57aa8;
   --rainbow-2: #f1b58a;        --rainbow-2-hover: #ec9866;
@@ -47,6 +13,22 @@
   --rainbow-4: #8fcf9f;        --rainbow-4-hover: #6cbe82;
   --rainbow-5: #8ab8e6;        --rainbow-5-hover: #6498d4;
   --rainbow-6: #b8a3e8;        --rainbow-6-hover: #9b80de;
+}
+
+:root[data-theme="light"] {
+  --bg: #dfe3ea;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --rule: #c6ccd6;
+  --link: #1a1a1a;
+  --link-hover: #000;
+
+  --rainbow-1: #d96088;        --rainbow-1-hover: #c14770;
+  --rainbow-2: #e07a3a;        --rainbow-2-hover: #c8611f;
+  --rainbow-3: #c89820;        --rainbow-3-hover: #a87f10;
+  --rainbow-4: #4ba668;        --rainbow-4-hover: #2e8a4c;
+  --rainbow-5: #3f7fc8;        --rainbow-5-hover: #2864ad;
+  --rainbow-6: #7e5ec9;        --rainbow-6-hover: #6443ae;
 }
 
 * { box-sizing: border-box; }

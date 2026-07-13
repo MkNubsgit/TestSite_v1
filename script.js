@@ -4,7 +4,7 @@
   function current() {
     var set = document.documentElement.getAttribute("data-theme");
     if (set === "light" || set === "dark") return set;
-    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "dark";
   }
   function render() {
     btn.textContent = current() === "dark" ? "☀" : "☾";
@@ -17,7 +17,6 @@
   btn.addEventListener("click", function () {
     set(current() === "dark" ? "light" : "dark");
   });
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
   render();
 })();
 
